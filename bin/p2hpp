@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'php2haml_preprocessor'
+
+codes = Php2hamlPreprocessor::Code.extract_codes(STDIN.read)
+
+puts Php2hamlPreprocessor::ErbConverter.new(codes).convert
